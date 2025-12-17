@@ -27,6 +27,8 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
 
+  // object desturucturing to avoid re-running effect on every render
+  // init contains logic to fetch user data from Puter and check authentication
   const { init } = usePuterStore(); 
   useEffect(() => {
     init();
