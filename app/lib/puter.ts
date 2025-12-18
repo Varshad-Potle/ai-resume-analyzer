@@ -1,3 +1,4 @@
+// change ai-model at line: 354
 import { create } from "zustand";
 
 declare global {
@@ -350,7 +351,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
           ],
         },
       ],
-      { model: "claude-sonnet-4" }
+      { model: "claude-opus-4-5-20251101" }
     ) as Promise<AIResponse | undefined>;
   };
 
