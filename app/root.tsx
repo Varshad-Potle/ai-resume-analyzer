@@ -9,7 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import { usePuterStore } from "./lib/puter";
 
 export const links: Route.LinksFunction = () => [
@@ -26,12 +26,23 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { init } = usePuterStore();
 
-  // object desturucturing to avoid re-running effect on every render
-  // init contains logic to fetch user data from Puter and check authentication
-  const { init } = usePuterStore(); 
   useEffect(() => {
-    init();
+    if (typeof window === "undefined") return;
+
+    const script = document.createElement("script");
+    script.src = "https://js.puter.com/v2/";
+    script.defer = true;
+    script.onload = () => {
+      init();
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, [init]);
 
   return (
@@ -43,7 +54,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <script src="https://js.puter.com/v2/"></script>
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -67,7 +77,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       error.status === 404
         ? "The requested page could not be found."
         : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
+  } else if (import.meta.env.DEV && error instanceof Error) {
     details = error.message;
     stack = error.stack;
   }
