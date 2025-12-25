@@ -1,87 +1,102 @@
-# Welcome to React Router!
+# AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+AI Resume Analyzer is a high-performance, client-side application designed to evaluate resumes against Applicant Tracking System (ATS) algorithms. Built with a modern, lightweight tech stack, it provides real-time feedback on content, structure, and keyword optimization without server-side latency.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+---
 
-## Features
+## ✨ Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+* **PDF Resume Parsing** – Robust text extraction using Mozilla’s PDF.js
+* **AI-Powered Analysis** – Intelligent evaluation of skills, experience, and relevance
+* **ATS Compatibility Check** – Identifies formatting and keyword issues
+* **Structured Resume Summary** – Clean, readable breakdown of resume content
+* **Fast, Reactive UI** – Instant feedback with zero unnecessary re-renders
+* **Modern UI Animations** – Subtle motion for better UX, not visual noise
+* **Global State Management** – Predictable, minimal, and efficient
 
-## Getting Started
+---
 
-### Installation
+## 🧠 Tech Stack
 
-Install the dependencies:
+| Category           | Technology            | Why It’s Used                               |
+| ------------------ | --------------------- | ------------------------------------------- |
+| Core Framework     | React + Vite          | Blazing-fast HMR and optimized builds       |
+| State Management   | Zustand               | Lightweight global state without Redux pain |
+| Styling            | Tailwind CSS          | Rapid, consistent UI without CSS hell       |
+| PDF Engine         | PDF.js                | Industry-standard PDF parsing by Mozilla    |
+| Utilities          | clsx + tailwind-merge | Safe dynamic class composition              |
+| Animations         | tw-animate-css        | Preconfigured, clean UI animations          |
+| Storage / Platform | Puter.js              | Browser-based storage & app utilities       |
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
 
 ```bash
+git clone <repository-url>
+cd ai-resume-analyzer
+```
+
+### 2️⃣ Initialize the Project (Vite + React)
+
+```bash
+npm create vite@latest . -- --template react
 npm install
 ```
 
-### Development
+### 3️⃣ Install Core Dependencies
 
-Start the development server with HMR:
+```bash
+npm install zustand pdfjs-dist
+```
+
+### 4️⃣ Install UI Utilities
+
+```bash
+npm install clsx tailwind-merge
+```
+
+### 5️⃣ Install Animation Library (Dev Dependency)
+
+```bash
+npm install -D tw-animate-css
+```
+
+### 6️⃣ Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+App will be running at:
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+http://localhost:5173
 ```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
 
 ---
 
-Built with ❤️ using React Router.
+## 🗂 Project Structure (High-Level)
+
+```
+src/
+│── app/
+  │── components/     
+  │── routes/            
+  │── lib/
+  │── app.css
+  │── root.tsx             
+│── constants/            
+│── types
+
+```
+
+## 🔐 Security & Privacy
+
+* No silent data leaks
+* Resume data stays client-side unless explicitly stored
+* PDF parsing happens locally in the browser
+
+---
