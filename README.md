@@ -35,7 +35,7 @@ AI Resume Analyzer is a high-performance, client-side application designed to ev
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Varshad-Potle/ai-resume-analyzer.git
 cd ai-resume-analyzer
 ```
 
@@ -89,7 +89,7 @@ src/
   │── app.css
   │── root.tsx             
 │── constants/            
-│── types
+│── types/
 
 ```
 
