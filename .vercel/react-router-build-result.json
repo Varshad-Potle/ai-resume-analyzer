@@ -1,0 +1,163 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/auth": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/upload": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/resume": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/wipe": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "app/routes/home.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/auth": {
+        "id": "routes/auth",
+        "parentId": "root",
+        "file": "app/routes/auth.tsx",
+        "path": "/auth",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/upload": {
+        "id": "routes/upload",
+        "parentId": "root",
+        "file": "app/routes/upload.tsx",
+        "path": "/upload",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/resume": {
+        "id": "routes/resume",
+        "parentId": "root",
+        "file": "app/routes/resume.tsx",
+        "path": "/resume/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/wipe": {
+        "id": "routes/wipe",
+        "parentId": "root",
+        "file": "app/routes/wipe.tsx",
+        "path": "/wipe",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "D:/ai-resume-analyzer/app",
+    "basename": "/",
+    "buildDirectory": "D:/ai-resume-analyzer/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "unstable_subResourceIntegrity": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/auth": {
+        "id": "routes/auth",
+        "parentId": "root",
+        "file": "routes/auth.tsx",
+        "path": "/auth"
+      },
+      "routes/upload": {
+        "id": "routes/upload",
+        "parentId": "root",
+        "file": "routes/upload.tsx",
+        "path": "/upload"
+      },
+      "routes/resume": {
+        "id": "routes/resume",
+        "parentId": "root",
+        "file": "routes/resume.tsx",
+        "path": "/resume/:id"
+      },
+      "routes/wipe": {
+        "id": "routes/wipe",
+        "parentId": "root",
+        "file": "routes/wipe.tsx",
+        "path": "/wipe"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/auth.tsx",
+            "path": "/auth"
+          },
+          {
+            "file": "routes/upload.tsx",
+            "path": "/upload"
+          },
+          {
+            "file": "routes/resume.tsx",
+            "path": "/resume/:id"
+          },
+          {
+            "file": "routes/wipe.tsx",
+            "path": "/wipe"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
