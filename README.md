@@ -4,7 +4,7 @@ AI Resume Analyzer is a high-performance, client-side application designed to ev
 
 ---
 
-**Live Demo:** [https://ai-resume-analyzer-opal-sigma.vercel.app](https://ai-resume-analyzer-opal-sigma.vercel.app)
+**Live Demo:** [https://resumeval.vercel.app](https://resumeval.vercel.app)
 
 ---
 
